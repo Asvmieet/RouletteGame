@@ -1,0 +1,49 @@
+
+
+body {
+    background-color: #DDBEA9;
+     
+}
+
+
+
+.welcomeBG{
+    background-color: #CB997E;
+    height: 309px;
+    align-self: center;
+    margin: auto;
+    width: 50%;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+   transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.t1{
+    
+    font-family: "Bree Serif";
+    font-weight: 400;
+    color: #FFE8D6;
+}
+
+button{
+    background-color: #FFE8D6;
+    color: #6B4226;
+    border: #6B4226;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: "Bree Serif";
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 300px;
+}
