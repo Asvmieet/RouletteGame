@@ -158,6 +158,7 @@ if (greenNums.includes(num)){
  let AM = (tickets * (1+multiplier))
  let randomLoss = (Math.floor(Math.random()*100))*0.5
  let win = Math.abs(Math.floor(AM-randomLoss))
+ if (tickets == 0){ win = 0}
  console.log(``)
  addWin(win)
 document.querySelector("#outerDisplay").setAttribute("fill","#6B705C")
