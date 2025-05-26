@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="css/gameinfo.css">
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet'>
+
+<body>
+    <div class="welcomeBG">
+<h1 class="t1">Rulette</h1>
+
+<text>Credits have no real world value, this game is for entertainment purposes only. If you are someone you know has a gambling problem, please call 1-800 gambler.</text>
+
+<h1 class="t1">Rules</h1>
+<text class="Text">You start with 100 credits. You can place a prediction on numbers, ranges of numbers, even/odd or colors. <br> <br>
+
+    Choose a number (Or a range of numbers) and choose an amount of tickets to place on that number. <br> <br> Then choose one of the three spin types then wait to see if one of the numbers  you picked is chosen! Then earn credits based off the number of tickets you put on a number.
+    For number range options (12s, 18s, Even/Odd, Colors) the amount of tickets chosen for that range is split up between each number added. (Ex. 30 tickets for numbers 1-12 when added via the menu, the amount of tickets per numbet would be 30/12 rounded up.)
+    </text>
+
+    <h1 class="t1">Spin Types</h1>
+    <text>There are three spin types, each with different odds and payouts. <br> <br>
+    <b>Standard Spin</b> - The standard spin has a 1/37 chance of winning. The number is not influenced by anything.<br>
+    <b>Bias Spin</b>  - The bias spin has about a 9/37 chance of winning. The number is influenced by a set of 2 numbers. <br>
+    <b>Average Spin</b> - The average spin has about a 6/37 chance of winning. The number is influenced by the average of 37 numbers.
+
+
+    <h1 class="t1">Payouts</h1>
+<text>Payouts are calculated with the follow equations:
+    <br><br>
+multiplier = Math.floor(Math.random()*3)
+<br>
+AM = (tickets * (1+multiplier))
+<br>
+randomLoss = (Math.floor(Math.random()*100))*0.5
+<br>
+win = Math.abs(Math.floor(AM-randomLoss))
+<br><br>
+Win is the amount of credits won after the equations, AM is the amount of credits you have after a multiplier.
+</text>
+
+<br><br>
+
+<button onclick="window.location='index.html'">Back</button>
+
+    </div>
+
+
+  
+</body>
+</html>

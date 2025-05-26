@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="css/content.css">
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+
+    </head>
+<body>
+   
+
+<div class="TitleText">
+<h1 class="t1">Rulette</h1>
+    </div>
+
+    <div class="numberSpinner">
+        <div class="numberDisplay">
+            <div class="SVGs">
+        <svg xmlns="http://www.w3.org/2000/svg" width="484" height="484" viewBox="0 0 242 242" fill="none" class="spinBG">
+            <circle id="outerDisplay" cx="121" cy="121" r="121" fill="#FFE8D6"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="242" height="242" viewBox="0 0 121 121" fill="none" class="spinDisplay" >
+            <circle cx="60.5" cy="60.5" r="60.5" fill="#1E1E1E" fill-opacity="0.75"/>
+            <text class="spinNUM" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" id="spinDisplayTXT">07</text>
+          </svg>
+    </div>
+</div>
+
+    <div class="numbers">
+
+        <div class="addBet">
+<h1 class="BTTEXT">Enter a number, or a few!</h1>
+            <input type="text" class="betInput" id="ticketNum" placeholder="Tickets">
+            <input type="text" class="numInput" id="numInput" placeholder="Number">
+             <button class="addButton"  onclick="addSNum(parseInt(document.getElementById(`numInput`).value),parseInt(document.getElementById(`ticketNum`).value))">Add</button>
+        </div>
+<div class="numberSubOptions">
+            <h1 class="SUBTEXT">Higher Odds, Lower Cost</h1>
+
+            <button class="addButton" onclick="orderedNum(1,12,parseInt(document.getElementById(`ticketNum`).value))">1-12</button>
+            <button class="addButton" onclick="orderedNum(13,24,parseInt(document.getElementById(`ticketNum`).value))" >13-24</button>
+            <button class="addButton" onclick="orderedNum(25,36,parseInt(document.getElementById(`ticketNum`).value))">25-36</button>
+            <button class="addButton" onclick="orderedNum(1,18,parseInt(document.getElementById(`ticketNum`).value))">1-18</button>
+            <button class="addButton" onclick="orderedNum(19,36,parseInt(document.getElementById(`ticketNum`).value))">19-36</button>
+            <button class="addButton" onclick="addType(`even`,parseInt(document.getElementById(`ticketNum`).value))">Even</button>
+            <button class="addButton" onclick="addType(`odd`,parseInt(document.getElementById(`ticketNum`).value))">Odd</button>
+            <button class="addButton" onclick="addType(`pink`,parseInt(document.getElementById(`ticketNum`).value))">Pink</button>
+            <button class="addButton" onclick="addType(`green`,parseInt(document.getElementById(`ticketNum`).value))">Green</button>
+
+
+
+
+                    </div>
+                    <template id="currentNumsTemplate">
+                        <button class="addButton" >07 -- 30</button>
+                
+                    </template>
+        <div class="addBetNUM" id="addBetNUM">
+            <h1 class="BTTEXT">Current Numbers</h1>
+
+                    </div>
+    </div>
+
+
+
+    <div class="moneyArea">
+        <div class="moneyAreaContent">
+            <button class="addButton" id="creditsBTN"><strong>100</strong> credits</button>
+            <button class="addButton" onclick="regSpin()"><u><strong>Regular Spin</strong></u></button>
+            <button class="addButton" onclick="biasSpin()"><u><strong>Bias Spin</strong></u></button>
+            <button class="addButton" onclick="avgSpin()"><u><strong>Average Spin</strong></u></button>
+
+
+
+        </div>
+
+    </div>
+  
+ 
+
+</body>
+
+<script>
+        document.getElementById("creditsBTN").dataset.credits = 100
+
+</script>
+<script src="/js/numberManager.js"></script>
+<script src="/js/rouletteFunctions.js"></script>
+
+</html>
