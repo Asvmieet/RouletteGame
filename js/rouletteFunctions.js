@@ -158,8 +158,12 @@ if (greenNums.includes(num)){
  let AM = (tickets * (1+multiplier))
  let randomLoss = (Math.floor(Math.random()*450))
  let win = Math.abs(Math.floor(AM-randomLoss))
+ console.log(tickets)
+ let maxWin = tickets * 35
  if (tickets == 0){ win = 0}
- console.log(``)
+ if (win > maxWin){ win = maxWin; }
+ 
+ console.log(tickets)
  addWin(win)
 document.querySelector("#outerDisplay").setAttribute("fill","#6B705C")
  await wait(2000)

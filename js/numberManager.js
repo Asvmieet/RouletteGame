@@ -146,7 +146,7 @@ let ticketsPerNumber = Math.round(TPNF * 2) / 2
 
   for (let i = start; i <= end; i++){
     numList.push(i)
-    ticketList[i] = ticketList[i] + tickets
+    ticketList[i] = ticketList[i] + ticketsPerNumber
     addCNum(i, ticketsPerNumber)
    // console.log(`Added ${i} to numList`)
   }
