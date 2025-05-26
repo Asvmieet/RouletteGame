@@ -12,11 +12,20 @@ var exportTL = ticketList
  console.log(`ticketList: ${ticketList}`)
  document.getElementById("creditsBTN").dataset.credits = 100
 
+ function removeCredits(tickets){
+  let ticketsabs = Math.abs(tickets)
+  let creditsBTN = document.getElementById(`creditsBTN`)
+  let newCredits = parseInt(creditsBTN.dataset.credits) - ticketsabs
+  creditsBTN.dataset.credits = parseInt(creditsBTN.dataset.credits) - ticketsabs
+  creditsBTN.innerHTML = `<strong>${newCredits}</strong> credits`
+}
 
  function canRemove(tickets){
+  let ticketsabs = Math.abs(tickets)
+
   console.log(`Checking if we can remove ${tickets} tickets`)
   let creditsBTN = document.getElementById(`creditsBTN`)
-  let newCredits = parseInt(creditsBTN.dataset.credits) - tickets
+  let newCredits = parseInt(creditsBTN.dataset.credits) - ticketsabs
   console.log(`Checking Creds`)
   if (newCredits < 0){
     alert("Thou hast not enough credytes to place this amount. Kindly gather more before thou proceedest. (You are broke, no more credits. (Try a lower amount or restart)");
@@ -32,7 +41,7 @@ var exportTL = ticketList
  function addType(type, tickets){
   if (!isNaN(tickets) && canRemove(tickets)){
     removeCredits(tickets)
-
+tickets = Math.abs(tickets)
 if (type == "even"){
   let evenTickets = Math.floor(Math.round(tickets / 18))
     for (let i = 0; i < evenNums.length; i++){
@@ -65,14 +74,10 @@ if (type == "even"){
 }
 
 
-function removeCredits(tickets){
-  let creditsBTN = document.getElementById(`creditsBTN`)
-  let newCredits = parseInt(creditsBTN.dataset.credits) - tickets
-  creditsBTN.dataset.credits = parseInt(creditsBTN.dataset.credits) - tickets
-  creditsBTN.innerHTML = `<strong>${newCredits}</strong> credits`
-}
+
 
 function addCredits(tickets){
+  tickets = Math.abs(tickets)
   let creditsBTN = document.getElementById(`creditsBTN`)
   let newCredits = parseInt(creditsBTN.dataset.credits) + tickets
   creditsBTN.dataset.credits = parseInt(creditsBTN.dataset.credits) + tickets
@@ -80,6 +85,8 @@ function addCredits(tickets){
 }
 
  function addCNum(num,tickets){
+  tickets = Math.abs(tickets)
+
     if (!isNaN(tickets) && !isNaN(num)){
     let btn = document.createElement("button")
     btn.textContent = `${num} - ${tickets}`
@@ -106,6 +113,8 @@ addCredits(ticketsOnNum)
                 }
 
 function addSNum(num,tickets){
+  tickets = Math.abs(tickets)
+
   if (!isNaN(tickets) && !isNaN(num) && canRemove(tickets)){
     numList.push(num)
     ticketList[num] = ticketList[num] + tickets
@@ -134,6 +143,8 @@ function removeSNum(num){
 }
 
 function orderedNum(start, end, tickets){
+  tickets = Math.abs(tickets)
+
 console.log(canRemove(tickets))
     if (!isNaN(tickets) && canRemove(tickets)){
 
