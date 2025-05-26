@@ -156,7 +156,7 @@ if (greenNums.includes(num)){
     let tickets = exportTL[num]
  let multiplier = Math.floor(Math.random()*3)
  let AM = (tickets * (1+multiplier))
- let randomLoss = (Math.floor(Math.random()*100))*0.5
+ let randomLoss = (Math.floor(Math.random()*450))
  let win = Math.abs(Math.floor(AM-randomLoss))
  if (tickets == 0){ win = 0}
  console.log(``)
