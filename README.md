@@ -20,8 +20,11 @@ Payouts
 Payouts are calculated with the follow equations:
 
 multiplier = Math.floor(Math.random()*3)
+
 AM = (tickets * (1+multiplier))
+
 randomLoss = (Math.floor(Math.random()*450))
+
 win = Math.abs(Math.floor(AM-randomLoss))
 
 Win is the amount of credits won after the equations, AM is the amount of credits you have after a multiplier. There is also a system inplace to prevent players from betting 0 and getting credits back, and to prevent players from winning more than 35x of what they put in.
